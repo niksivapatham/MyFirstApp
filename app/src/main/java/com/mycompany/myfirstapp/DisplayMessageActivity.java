@@ -1,6 +1,7 @@
 package com.mycompany.myfirstapp;
 
 import android.content.Intent;
+import android.renderscript.Sampler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,6 +17,7 @@ public class DisplayMessageActivity extends ActionBarActivity {
         //Get the message from the intent
         Intent intent = getIntent();
         String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
+        message += "\n\n" + getResources().getString(R.string.entry_text);
 
         //Create the Text View
         TextView textView = new TextView(this);
@@ -24,6 +26,7 @@ public class DisplayMessageActivity extends ActionBarActivity {
 
         //Set the Text view as the Activity Layout
         setContentView(textView);
+
 
     }
 
