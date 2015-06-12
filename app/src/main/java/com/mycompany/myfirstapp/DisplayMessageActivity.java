@@ -17,8 +17,6 @@ public class DisplayMessageActivity extends ActionBarActivity {
         //Get the message from the intent
         Intent intent = getIntent();
         String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
-        message += "\n\n" + getResources().getString(R.string.entry_text);
-
         //Create the Text View
         TextView textView = new TextView(this);
         textView.setTextSize(40);
@@ -29,6 +27,7 @@ public class DisplayMessageActivity extends ActionBarActivity {
 
 
     }
+
 
 
     @Override

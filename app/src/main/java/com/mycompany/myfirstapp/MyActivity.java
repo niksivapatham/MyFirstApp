@@ -12,13 +12,20 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class MyActivity extends ActionBarActivity {
+public class MyActivity extends ActionBarActivity implements TopSectionFragment.TopSectionListener{
     public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+    }
+
+    //Because inheriting from interface, must implement
+    @Override
+    public void createMeme(String top, String bottom) {
+        BottomPictureFragment bottomPictureFragment = (BottomPictureFragment) getSupportFragmentManager().findFragmentById(R.id.fragment2);
+        bottomPictureFragment.setMemeText(top, bottom);
     }
 
 
